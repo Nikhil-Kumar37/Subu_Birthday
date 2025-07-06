@@ -35,10 +35,32 @@
   <button id="playMusic">🎵 Play Music</button>
 
   <script src="script.js"></script>
-  <script>
+  
   // Countdown code
-  function countdown() { …your code… }
+  <script>
+  function countdown() {
+    const birthday = new Date("July 18, 2025 00:00:00").getTime();
+    const now = new Date().getTime();
+    const diff = birthday - now;
+
+    const el = document.getElementById("countdown");
+    if (!el) return;
+
+    if (diff <= 0) {
+      el.textContent = "🎂 It’s Subu’s Birthday! 🎉";
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / 1000 / 60) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    el.textContent = `🎉 Only ${days} Days ${hours} Hours ${minutes} Minutes ${seconds} Seconds left until Subu's Birthday! 🎂`;
+  }
+
   setInterval(countdown, 1000);
+  countdown(); // run once immediately
   </script>
 </body>
 </html>
