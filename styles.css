@@ -4,6 +4,8 @@ body {
   background: #fff0f5;
   color: #333;
   text-align: center;
+  position: relative;
+  z-index: 0;
 }
 
 .hero {
