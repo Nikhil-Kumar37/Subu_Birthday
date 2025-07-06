@@ -44,3 +44,9 @@ body {
   height: 100%;
   pointer-events: none;
 }
+.countdown-box {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  color: #e91e63;
+}
