@@ -7,6 +7,24 @@ document.getElementById('playMusic').onclick = () => {
   music.paused ? music.play() : music.pause();
 };
 
+
+function dropFlower() {
+  const flower = document.createElement("div");
+  const flowers = ["🌸", "🌷", "💐", "🌺"];
+  flower.classList.add("flower");
+  flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
+  flower.style.left = Math.random() * 100 + "vw";
+  flower.style.animationDuration = 3 + Math.random() * 2 + "s";
+  flower.style.fontSize = (1.5 + Math.random() * 1.5) + "rem";
+  document.body.appendChild(flower);
+
+  setTimeout(() => {
+    flower.remove();
+  }, 5000);
+}
+
+// Drop a flower every 300 milliseconds
+setInterval(dropFlower, 300);
 function countdown() {
   const birthday = new Date("July 18, 2025 00:00:00").getTime();
   const now = new Date().getTime();
