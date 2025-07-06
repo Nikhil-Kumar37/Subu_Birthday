@@ -84,7 +84,7 @@ body {
 .floating-emoji {
   position: fixed;
   top: -2rem;
-  z-index: 0; /* behind all content */
+  z-index: -1; /* behind all content */
   pointer-events: none;
   user-select: none;
   animation: floatDown linear;
@@ -116,4 +116,9 @@ nav.navbar a {
 }
 nav.navbar a:hover {
   color: #880e4f;
+}
+.reel-frame {
+  position: relative;
+  z-index: 1; /* Keep this ABOVE the emojis, but not interfering with layout */
+  margin: 1rem;
 }
